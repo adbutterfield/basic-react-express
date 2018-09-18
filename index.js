@@ -1,4 +1,4 @@
-const logSomething = options => ({
+const logSomething = (options) => ({
   ...options,
   anotherOption: 'Hello!'
 });
