@@ -1,9 +1,13 @@
 import express from 'express';
+import logger from 'morgan';
 import path from 'path';
 
 // Express app setup
 const app = express();
 const port = 3000;
+
+// logger
+app.use(logger('combined'));
 
 // view engine
 app.set('views', path.join(__dirname, './views'));
