@@ -9,6 +9,9 @@ const port = 3000;
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'pug');
 
+// serve static files from 'public'
+app.use(express.static(path.join(__dirname, './public')));
+
 // routes
 app.get('*', (req, res) => {
   res.render('index');
