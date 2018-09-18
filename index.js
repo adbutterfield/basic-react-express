@@ -1,5 +1,8 @@
-/**
- * index.js
- */
+const logSomething = options => ({
+  ...options,
+  anotherOption: 'Hello!'
+});
 
-console.log('Hello, world!');
+const options = logSomething({ one: '1', two: '2' });
+
+console.log(options);
