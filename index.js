@@ -1,10 +1,19 @@
 import express from 'express';
 import logger from 'morgan';
 import path from 'path';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 
 // Express app setup
 const app = express();
 const port = 3000;
+
+// body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// cookie parser
+app.use(cookieParser());
 
 // logger
 app.use(logger('combined'));
