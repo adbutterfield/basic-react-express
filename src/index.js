@@ -2,9 +2,12 @@
  * index.js
  */
 
-import { add, subtract } from './module';
+import React from 'react';
+import { render } from 'react-dom';
 
-const resultA = add(2, 3);
-const resultB = subtract(5, 1);
+const MainApp = () => (
+  <h1>Hello React!</h1>
+);
 
-console.log(resultA, resultB);
+// render the app
+render(<MainApp />, document.getElementById('app'));
