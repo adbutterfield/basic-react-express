@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production npx parcel build src/index.js -d public/js/ --no-cache",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .js,.jsx"
+    "lint": "eslint . --ignore-path .gitignore --ext .js,.jsx"
   },
   "pre-commit": [
     "lint"
