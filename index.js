@@ -3,6 +3,7 @@ import logger from 'morgan';
 import path from 'path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import Parcel from 'parcel-bundler';
 
 // Express app setup
 const app = express();
@@ -14,6 +15,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // cookie parser
 app.use(cookieParser());
+
+// use parcel bundler
+if (process.env.NODE_ENV !== 'production') {
+  const bundler = new Parcel('./src/index.js', {
+    outDir: 'public/js',
+    watch: true,
+  });
+
+  bundler.bundle();
+
+  app.use(bundler.middleware());
+}
 
 // logger
 app.use(logger('combined'));

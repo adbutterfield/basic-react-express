@@ -1,0 +1,10 @@
+{
+  "verbose": false,
+  "watch": [
+    "src/",
+    "index.js",
+    "nodemon.json",
+    "package.json"
+  ],
+  "ext": "js, json"
+}
